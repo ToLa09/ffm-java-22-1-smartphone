@@ -38,14 +38,27 @@ class MainTest {
         assertEquals(expected,actual);
     }
     @Test
-    void getContactReturnsMykola(){
-        //
+    void getContactIndex0ReturnsMykola(){
+        //given
         List<Contact> testContacts = new ArrayList<>();
         Contact mykola = new Friend("mykola",1234);
         testContacts.add(mykola);
         Smartphone testPhone = new Smartphone("Model","Hersteller",testContacts);
         //when
         Contact actual = testPhone.getContact(0);
+        //then
+        Contact expected = mykola;
+        assertEquals(expected, actual);
+    }
+    @Test
+    void getContactByNameMykola() {
+        //given
+        List<Contact> testContacts = new ArrayList<>();
+        Contact mykola = new Friend("mykola",1234);
+        testContacts.add(mykola);
+        Smartphone testPhone = new Smartphone("Model","Hersteller",testContacts);
+        //when
+        Contact actual = testPhone.getContactByName("mykola");
         //then
         Contact expected = mykola;
         assertEquals(expected, actual);
