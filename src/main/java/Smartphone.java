@@ -20,13 +20,15 @@ public class Smartphone implements Radio, GPS{
     }
 
     @Override
-    public String startRadio() {
-        return "Radio started";
+    public boolean startRadio() {
+        System.out.println("Radio started");
+        return true;
     }
 
     @Override
-    public String stopRadio() {
-        return "Radio stopped";
+    public boolean stopRadio() {
+        System.out.println("Radio stopped");
+        return false;
     }
 
     public String getModel() {

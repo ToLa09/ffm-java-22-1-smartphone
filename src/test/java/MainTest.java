@@ -12,20 +12,18 @@ class MainTest {
         //given
         Smartphone testPhone = new Smartphone();
         //when
-        String actual = testPhone.startRadio();
+        boolean actual = testPhone.startRadio();
         //then
-        String expected = "Radio started";
-        assertEquals(expected,actual);
+        assertTrue(actual);
     }
     @Test
     void stopRadioReturnsRadioStopped(){
         //given
         Smartphone testPhone = new Smartphone();
         //when
-        String actual = testPhone.stopRadio();
+        boolean actual = testPhone.stopRadio();
         //then
-        String expected = "Radio stopped";
-        assertEquals(expected,actual);
+        assertFalse(actual);
     }
     @Test
     void getPositionreturnsKoeln(){
@@ -41,7 +39,7 @@ class MainTest {
     void getContactIndex0ReturnsMykola(){
         //given
         List<Contact> testContacts = new ArrayList<>();
-        Contact mykola = new Friend("mykola",1234);
+        Contact mykola = new Friend("mykola","+4901761234");
         testContacts.add(mykola);
         Smartphone testPhone = new Smartphone("Model","Hersteller",testContacts);
         //when
@@ -54,7 +52,7 @@ class MainTest {
     void getContactByNameMykola() {
         //given
         List<Contact> testContacts = new ArrayList<>();
-        Contact mykola = new Friend("mykola",1234);
+        Contact mykola = new Friend("mykola","+4901761234");
         testContacts.add(mykola);
         Smartphone testPhone = new Smartphone("Model","Hersteller",testContacts);
         //when

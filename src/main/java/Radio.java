@@ -1,4 +1,4 @@
 public interface Radio {
-    String startRadio();
-    String stopRadio();
+    boolean startRadio();
+    boolean stopRadio();
 }
